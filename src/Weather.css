@@ -1,7 +1,8 @@
-.container {
+.box {
   color: #ffffcc;
   font-family: "Josefin Sans", sans-serif;
-  max-width: 460px;
+  min-width: 410px;
+  max-width: 410px;
   margin-top: 50px;
   border: 2px solid orange;
   border-radius: 20px;
@@ -23,7 +24,7 @@
 .search-form {
   display: inline;
 }
-h1 {
+.weather h1 {
   font-size: 70px;
   text-size-adjust: 50%;
   margin-top: 16px;
@@ -47,7 +48,7 @@ h1 {
 .second-column {
   padding-left: 0;
 }
-ul {
+.weather ul {
   list-style: none;
   padding: 0;
 }

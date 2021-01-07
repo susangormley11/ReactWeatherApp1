@@ -1,8 +1,13 @@
 import React from "react";
 import "./Weather.css";
+import axios from "axios";
 
 export default function Weather() {
-  return (
+  const apiKey = "7bd9586b0c549c9ab96998e30e8e057f";
+  let city = "London";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  
+    return (
     <div className="Weather">
       <form className="search-form">
         <input
@@ -23,7 +28,7 @@ export default function Weather() {
             <li>
               <img
                 src="http://openweathermap.org/img/wn/10d@2x.png"
-                className="icon"
+                className="icon" alt="weathericon"
               ></img>
             </li>
           </ul>
@@ -32,10 +37,10 @@ export default function Weather() {
           <h2>
             <span className="temperature">26</span>
             <span className="units">
-              <a href="#" className="active">
+              <span className="active">
                 °C
-              </a>{" "}
-              |<a href="/">°F</a>
+              </span>{" "}
+              |<span>°F</span>
             </span>
           </h2>
           <ul>
@@ -46,10 +51,6 @@ export default function Weather() {
         </div>
       </div>
       <hr />
-
-      <a href="https://github.com/susangormley11/Weather-Project">
-        Coded by Susan Gormley
-      </a>
     </div>
   );
 }
