@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <div className="box">
-     <Weather />
+     <Weather onLoadCity="London" />
      <footer>
        Created by Susan Gormley and open-sourced on <a href="https://github.com/susangormley11/ReactWeatherApp1" target="_blank" rel="noreferrer">GitHub</a>
      </footer>
