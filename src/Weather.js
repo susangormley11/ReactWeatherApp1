@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import Date from "./Date";
 
 export default function Weather(props) {
-  const [load, setLoad] = useState(false);
-  const [weather, setWeather] = useState("null");
+  const [weather, setWeather] = useState({ready: false});
 
     function handleResponse(response) {
-        console.log(response.data);
         setWeather({
+            ready: true,
             temperature: response.data.main.temp,
             wind: response.data.wind.speed,
             description: response.data.weather[0].description,
             humidity: response.data.main.humidity,
             city: response.data.main.name,
+            date: new Date(response.data.dt * 1000),
 
         });
-        setLoad(true);
+    
     }
   
-    if(load) {
+    if(weather.ready) {
          return (
     <div className="Weather">
       <form className="search-form">
@@ -37,7 +38,7 @@ export default function Weather(props) {
       <div className="row">
         <div className="col-7">
           <ul>
-            <li></li>
+            <li><Date /></li>
             <li></li>
             <li>
               <img
@@ -70,7 +71,6 @@ export default function Weather(props) {
     }
      else {
 const apiKey = "7bd9586b0c549c9ab96998e30e8e057f";
-  let city = "London";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.onLoadCity}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(handleResponse);
 
