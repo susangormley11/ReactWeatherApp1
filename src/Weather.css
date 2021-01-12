@@ -41,16 +41,8 @@
 .condition {
   text-transform: capitalize;
 }
-.icon {
-  width: 100%;
-  box-sizing: content-box;
-}
 .second-column {
   padding-left: 0;
-}
-.weather ul {
-  list-style: none;
-  padding: 0;
 }
 
 .active {
