@@ -8,6 +8,7 @@ const [loaded, setLoaded] = useState(false);
 const [forecast, setForecast] = useState(null);
 
 function handleForecastResponse(response) {
+    console.log(response);
     setForecast(response.data);
     setLoaded(true);
 
