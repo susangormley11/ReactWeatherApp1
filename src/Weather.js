@@ -51,8 +51,7 @@ export default function Weather(props) {
         />
         <input type="submit" value="Search" className="search-button" />
       </form>
-      <button className="current-location">Current Location</button>
-
+    
       <WeatherInfo data={weatherData} />
       <hr />
       <WeatherForecast city={weatherData.city} />
